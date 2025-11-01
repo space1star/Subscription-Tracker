@@ -11,4 +11,4 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-export default transporter; //---> no need of curly braces
+export default transporter;
