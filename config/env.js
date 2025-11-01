@@ -2,10 +2,7 @@
 // /* eslint-disable no-undef */
 import { config } from 'dotenv';
 
-//config({ path: '.env' });//this'll extract all the env. var.
-//need multiple env var files for more environments
-
-config({ path: `.env.${process.env.NODE_ENV || 'development'}.local` });//by deafault it set to development
+config({ path: `.env.${process.env.NODE_ENV || 'development'}.local` });
 
 export const { 
     PORT, NODE_ENV, SERVER_URL,
