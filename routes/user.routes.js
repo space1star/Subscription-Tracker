@@ -5,14 +5,13 @@ import { getUser, getUsers } from "../controllers/user.controller.js";
 
 const userRouter = Router();
 
-//userRouter.get('/', (req, res) => res.send({title: 'GET all users'}));//get all users
 userRouter.get('/', getUsers);
 
-userRouter.get('/:id', authorize, getUser);//get user by id
+userRouter.get('/:id', authorize, getUser);
 
 userRouter.post('/', (req, res) => res.send({title: 'Create new user'}));
 
-userRouter.put('/:id', (req, res) => res.send({title: 'UPDATE user'}));//put used for updates
+userRouter.put('/:id', (req, res) => res.send({title: 'UPDATE user'}));
 
 userRouter.delete('/:id', (req, res) => res.send({title: 'DELETE user'}));
 
