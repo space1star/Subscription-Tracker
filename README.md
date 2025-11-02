@@ -58,6 +58,7 @@ git clone https://github.com/adrianhajdin/subscription-tracker-api.git
 
 cd subscription-tracker-api
 
+
 Installation
 
 
@@ -68,31 +69,32 @@ npm install
 
 
 
+
 ~Set Up Environment Variables
 
 Create a new file named .env.local in the root of your project and add the following content:
 
-# PORT
+#PORT
 PORT=5500
 SERVER_URL="http://localhost:5500"
 
-# ENVIRONMENT
+#ENVIRONMENT
 NODE_ENV=development
 
-# DATABASE
+#DATABASE
 DB_URI=
 
-# JWT AUTH
+#JWT AUTH
 JWT_SECRET=
 JWT_EXPIRES_IN="1d"
 
-# ARCJET
+#ARCJET
 ARCJET_KEY=
 ARCJET_ENV="development"
 
-# UPSTASH
+#UPSTASH
 QSTASH_URL=http://127.0.0.1:8080
 QSTASH_TOKEN=
 
-# NODEMAILER
+#NODEMAILER
 EMAIL_PASSWORD=
