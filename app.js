@@ -32,16 +32,11 @@ app.use('/api/v1/workflows', workflowRouter);
 //MIDDLEWARE
 app.use(errorMiddleware);
 
-      //path, handler(callback fun)
 app.get('/',(req, res) => {
-    //When someone visits http://localhost:3000/, the server responds with "Hello from home page!"
-    //res.send('Hello from home page!');
     res.send('Welcome to the Subscription Tracker API!');
 });
 
-         //port, callback fun
 app.listen(PORT, async() => {
-    //console.log('Server is running on port 3000');
     console.log(`Subscription Tracker API is running on http://localhost:${PORT}`);
 
     await connectToDB();
