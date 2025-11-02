@@ -1,6 +1,5 @@
 import User from '../models/user.model.js';
 
-//fun
 export const getUsers = async(req, res, next) => {
     try{
      const users = await User.find();
@@ -13,7 +12,7 @@ export const getUsers = async(req, res, next) => {
 
 export const getUser = async (req, res, next) => {
     try{
-        const user = await User.findById(req.params.id).select('-password');//se;ect all the field minus(-) password
+        const user = await User.findById(req.params.id).select('-password');
 
         if(!user){
             const error = new Error('User not found');
