@@ -4,7 +4,6 @@ import {JWT_SECRET} from '../config/env.js';
 
 const authorize = async(req, res, next) => {
     try{
-        //access the user token
         let token;
         
         if(req.headers.authorization && req.headers.authorization.startsWith('Bearer')){
@@ -17,7 +16,6 @@ const authorize = async(req, res, next) => {
 
         const decoded = jwt.verify(token, JWT_SECRET);
 
-        //check user still exist or not
         const user = await User.findById(decoded.userId);
 
         if(!user){
@@ -26,10 +24,9 @@ const authorize = async(req, res, next) => {
 
         req.user = user;
 
-        next();//forward over to 2nd part of the req
+        next();
 
     }catch(error){
-        //401 ---> means unauthorized
         res.status(401).json({message: 'Unauthorized', error: error.message});
     }
 }
