@@ -70,7 +70,7 @@ export const signIn = async(req, res, next) => {
 
      if(!isPasswordValid){
         const error = new Error('Invalid Password');
-        error.statusCode = 401;//means unauthorized
+        error.statusCode = 401;
         throw error;
      }
 
